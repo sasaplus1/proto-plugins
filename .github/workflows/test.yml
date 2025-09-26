@@ -1,0 +1,45 @@
+name: test
+
+on:
+  - push
+  - pull_request
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: crystal on ${{ matrix.os }}
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+          - windows-latest
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    defaults:
+      run:
+        shell: bash
+    env:
+      PROTO_LOG: debug
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: moonrepo/setup-toolchain@3927d571963592235146e8e0b5261206954796a2 # v0.6.0
+        with:
+          cache: false
+      - run: proto plugin add crystal "file://$GITHUB_WORKSPACE/crystal/plugin.toml"
+        env:
+          PROTO_CONFIG_MODE: global
+      - run: proto versions crystal
+      - run: proto install crystal 1.17.1
+      - run: proto run crystal -- --version
+      - run: crystal --version
+      - run: shards --version
+      - run: shards install && crystal run main.cr
+        working-directory: crystal/test

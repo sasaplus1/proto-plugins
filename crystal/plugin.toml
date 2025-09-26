@@ -19,7 +19,6 @@ exe-path = "bin/crystal"
 archs = ["aarch64", "x86_64"]
 download-file = "crystal-{version}-windows-{arch}-msvc-unsupported.zip"
 exe-path = "crystal"
-exes-dir = "."
 
 [install]
 download-url = "https://github.com/crystal-lang/crystal/releases/download/{version}/{download_file}"
