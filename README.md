@@ -1,6 +1,6 @@
 # proto-plugins
 
-plugins for [moonrepo/proto](https://moonrepo.dev/proto)
+plugins for [proto](https://moonrepo.dev/proto)
 
 ## License
 
