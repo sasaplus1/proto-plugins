@@ -8,6 +8,7 @@ archs = ["x86_64"]
 archive-prefix = "crystal-{version}-1"
 download-file = "crystal-{version}-1-linux-x86_64-bundled.tar.gz"
 exe-path = "bin/crystal"
+exes-dir = "bin"
 
 [platform.macos]
 archs = ["aarch64", "x86_64"]
