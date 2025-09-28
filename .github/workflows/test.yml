@@ -26,8 +26,6 @@ jobs:
     defaults:
       run:
         shell: bash
-    env:
-      PROTO_LOG: debug
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
       - uses: moonrepo/setup-toolchain@3927d571963592235146e8e0b5261206954796a2 # v0.6.0
