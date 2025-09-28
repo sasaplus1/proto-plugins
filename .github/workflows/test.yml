@@ -31,6 +31,7 @@ jobs:
       - uses: moonrepo/setup-toolchain@3927d571963592235146e8e0b5261206954796a2 # v0.6.0
         with:
           cache: false
+      - run: uname -a
       - run: proto plugin add crystal "file://$GITHUB_WORKSPACE/crystal/plugin.toml"
         env:
           PROTO_CONFIG_MODE: global

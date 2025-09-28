@@ -6,7 +6,7 @@ type = "language"
 [platform.linux]
 archs = ["x86_64"]
 archive-prefix = "crystal-{version}-1"
-download-file = "crystal-{version}-1-linux-x86_64-bundled.tar.gz"
+download-file = "crystal-{version}-1-linux-{arch}-bundled.tar.gz"
 exe-path = "bin/crystal"
 
 [platform.macos]
@@ -14,9 +14,6 @@ archs = ["aarch64", "x86_64"]
 archive-prefix = "crystal-{version}-1"
 download-file = "crystal-{version}-1-darwin-universal.tar.gz"
 exe-path = "embedded/bin/crystal"
-
-# [platform.macos.exes.shards]
-# exe-path = "embedded/bin/shards"
 
 [platform.windows]
 archs = ["aarch64", "x86_64"]
@@ -33,6 +30,9 @@ no-shim = true
 
 [install.exes.shards]
 exe-path = "shards"
+
+[platform.macos.exes.shards]
+exe-path = "embedded/bin/shards"
 
 [resolve]
 git-url = "https://github.com/crystal-lang/crystal"
