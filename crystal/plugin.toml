@@ -13,7 +13,10 @@ exe-path = "bin/crystal"
 archs = ["aarch64", "x86_64"]
 archive-prefix = "crystal-{version}-1"
 download-file = "crystal-{version}-1-darwin-universal.tar.gz"
-exe-path = "bin/crystal"
+exe-path = "embedded/bin/crystal"
+
+# [platform.macos.exes.shards]
+# exe-path = "embedded/bin/shards"
 
 [platform.windows]
 archs = ["aarch64", "x86_64"]
@@ -29,7 +32,7 @@ primary = true
 no-shim = true
 
 [install.exes.shards]
-exe-path = "embedded/bin/shards"
+exe-path = "shards"
 
 [resolve]
 git-url = "https://github.com/crystal-lang/crystal"
