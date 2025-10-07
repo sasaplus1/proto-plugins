@@ -1,0 +1,29 @@
+name = "github-mcp-server"
+type = "cli"
+
+[platform.macos]
+checksum-file = "github-mcp-server_{version}_checksums.txt"
+download-file = "github-mcp-server_Darwin_{arch}.tar.gz"
+
+[platform.linux]
+checksum-file = "github-mcp-server_{version}_checksums.txt"
+download-file = "github-mcp-server_Linux_{arch}.tar.gz"
+
+[platform.windows]
+checksum-file = "github-mcp-server_{version}_checksums.txt"
+download-file = "github-mcp-server_Windows_{arch}.zip"
+
+[install]
+checksum-url = "https://github.com/github/github-mcp-server/releases/download/v{version}/{checksum_file}"
+download-url = "https://github.com/github/github-mcp-server/releases/download/v{version}/{download_file}"
+
+[install.arch]
+aarch64 = "arm64"
+x86_64 = "x86_64"
+x86 = "i386"
+
+[install.exes.github-mcp-server]
+primary = true
+
+[resolve]
+git-url = "https://github.com/github/github-mcp-server"
