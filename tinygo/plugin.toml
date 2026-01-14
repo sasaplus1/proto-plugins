@@ -1,0 +1,27 @@
+name = "tinygo"
+type = "cli"
+
+[platform.macos]
+download-file = "tinygo{version}.darwin-{arch}.tar.gz"
+
+[platform.linux]
+download-file = "tinygo{version}.linux-{arch}.tar.gz"
+
+[platform.windows]
+archs = ["x86_64"]
+download-file = "tinygo{version}.windows-{arch}.zip"
+
+[install]
+download-url = "https://github.com/tinygo-org/tinygo/releases/download/v{version}/{download_file}"
+
+[install.arch]
+aarch64 = "arm64"
+x86_64 = "amd64"
+arm = "arm"
+
+[install.exes.tinygo]
+exe-path = "tinygo/bin/tinygo"
+primary = true
+
+[resolve]
+git-url = "https://github.com/tinygo-org/tinygo"
