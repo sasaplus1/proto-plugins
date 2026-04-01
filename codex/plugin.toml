@@ -6,8 +6,8 @@ download-file = "codex-{arch}-apple-darwin.tar.gz"
 exe-path = "codex-{arch}-apple-darwin"
 
 [platform.linux]
-download-file = "codex-{arch}-unknown-linux-gnu.tar.gz"
-exe-path = "codex-{arch}-unknown-linux-gnu"
+download-file = "codex-{arch}-unknown-linux-{libc}.tar.gz"
+exe-path = "codex-{arch}-unknown-linux-{libc}"
 
 [install]
 download-url = "https://github.com/openai/codex/releases/download/rust-v{version}/{download_file}"
