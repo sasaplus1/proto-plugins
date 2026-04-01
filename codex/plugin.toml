@@ -1,0 +1,20 @@
+name = "codex"
+type = "cli"
+
+[platform.macos]
+download-file = "codex-{arch}-apple-darwin.tar.gz"
+exe-path = "codex-{arch}-apple-darwin"
+
+[platform.linux]
+download-file = "codex-{arch}-unknown-linux-{libc}.tar.gz"
+exe-path = "codex-{arch}-unknown-linux-{libc}"
+
+[install]
+download-url = "https://github.com/openai/codex/releases/download/rust-v{version}/{download_file}"
+
+[install.exes.codex]
+primary = true
+
+[resolve]
+git-url = "https://github.com/openai/codex"
+version-pattern = "^rust-v(\\d+\\.\\d+\\.\\d+)$"
