@@ -1,0 +1,22 @@
+name = "claude-code"
+type = "cli"
+
+[platform.macos]
+download-file = "darwin-{arch}/claude"
+
+[platform.linux]
+download-file = "linux-{arch}/claude"
+
+[install]
+download-url = "https://storage.googleapis.com/claude-code-dist-86c565f3-f756-42ad-8dfa-d59b1c096819/claude-code-releases/{version}/{download_file}"
+
+[install.arch]
+aarch64 = "arm64"
+x86_64 = "x64"
+
+[install.exes.claude]
+exe-path = "claude-code"
+primary = true
+
+[resolve]
+git-url = "https://github.com/anthropics/claude-code"
