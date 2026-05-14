@@ -1,0 +1,29 @@
+name = "perry"
+type = "cli"
+
+[platform.macos]
+checksum-file = "perry-macos-{arch}.tar.gz.sha256"
+download-file = "perry-macos-{arch}.tar.gz"
+
+[platform.linux]
+checksum-file = "perry-linux-{arch}{libc}.tar.gz.sha256"
+download-file = "perry-linux-{arch}{libc}.tar.gz"
+
+[platform.windows]
+archs = ["x86_64"]
+checksum-file = "perry-windows-{arch}.zip.sha256"
+download-file = "perry-windows-{arch}.zip"
+
+[install]
+checksum-url = "https://github.com/PerryTS/perry/releases/download/v{version}/{checksum_file}"
+download-url = "https://github.com/PerryTS/perry/releases/download/v{version}/{download_file}"
+
+[install.libc]
+gnu = ""
+musl = "-musl"
+
+[install.exes.perry]
+primary = true
+
+[resolve]
+git-url = "https://github.com/PerryTS/perry"
