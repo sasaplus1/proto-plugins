@@ -31,6 +31,15 @@ $ proto plugin add github-mcp-server https://raw.githubusercontent.com/sasaplus1
 $ proto install github-mcp-server
 ```
 
+### perry
+
+[perry](https://www.perryts.com/)
+
+```bash
+$ proto plugin add perry https://raw.githubusercontent.com/sasaplus1/proto-plugins/main/perry/plugin.toml
+$ proto install perry
+```
+
 ### tinygo
 
 [tinygo](https://tinygo.org/)
